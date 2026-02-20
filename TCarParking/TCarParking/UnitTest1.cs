@@ -33,11 +33,11 @@ namespace TCarParking
         {
             Parking parking = new Parking(100);
 
+            Assert.IsFalse(parking.ParkingLotIsBusy(96));
             parking.TakingAPlace(96);
-            Assert.IsFalse(parking.TakingAPlace(96));
+            Assert.IsTrue(parking.ParkingLotIsBusy(96));
             parking.FreeingUpSpace(96);
-            Assert.IsTrue(parking.TakingAPlace(96));
-            Assert.IsFalse(parking.TakingAPlace(96));
+            Assert.IsFalse(parking.ParkingLotIsBusy(96));
         }
     }
 }

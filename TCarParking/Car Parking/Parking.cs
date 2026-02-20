@@ -12,31 +12,29 @@ namespace Car_Parking
 
         public Parking(int numberOfLots)
         {
-            for (int i = 0; i < numberOfLots; i++)
+            for (int i = 1; i <= numberOfLots; i++)
             {
                 //bool isBusy = true;
                 //if (i % 2 == 0)
                 //{
                 //    isBusy = false;
                 //}
-                parking_.Add(new ParkingLot((i + 1), false));
+                parking_.Add(new ParkingLot(i, false));
             }     
         }
 
-        public bool TakingAPlace(int userQuery)
+        public void TakingAPlace(int userQuery)
         {
             if (ParkingLotIsBusy(userQuery)==false)
             {
-                parking_[userQuery - 1].Busy = true;
-                return true;
+                parking_[userQuery].Busy = true;                
             }
-            else return false;
         }
         public void FreeingUpSpace(int userQuery)
         {
             if (ParkingLotIsBusy(userQuery))
             {
-                parking_[userQuery - 1].Busy = false;
+                parking_[userQuery].Busy = false;
             }
         }
 
@@ -46,10 +44,7 @@ namespace Car_Parking
             {
                 if (lot.Number == userQuery)
                 {
-                    if (lot.Busy)
-                    {
-                        return false;
-                    }
+                    return lot.Busy;
                 }
             }
             return true;

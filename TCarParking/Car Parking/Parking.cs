@@ -23,28 +23,31 @@ namespace Car_Parking
             }     
         }
 
-        public void TakingAPlace(int userQuery)
+        public bool TakingPlace(int userQuery)
         {
-            if (ParkingLotIsBusy(userQuery)==false)
+            if (!CheckParkingLot(userQuery))
             {
-                parking_[userQuery].Busy = true;                
+                return parking_[userQuery].IsBusy = true;
             }
+            return false;
         }
-        public void FreeingUpSpace(int userQuery)
+        public bool FreeingUpSpace(int userQuery)
         {
-            if (ParkingLotIsBusy(userQuery))
+            if (CheckParkingLot(userQuery))
             {
-                parking_[userQuery].Busy = false;
+                parking_[userQuery].IsBusy = false;
+                return true;              
             }
+            return false;
         }
 
-        public bool ParkingLotIsBusy(int userQuery)
+        public bool CheckParkingLot(int userQuery)
         {
             foreach(ParkingLot lot in parking_)
             {
-                if (lot.Number == userQuery)
+                if (lot.NumberOfLot == userQuery)
                 {
-                    return lot.Busy;
+                    return lot.IsBusy;
                 }
             }
             return true;

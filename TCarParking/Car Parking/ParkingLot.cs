@@ -8,23 +8,13 @@ namespace Car_Parking
 {
     public class ParkingLot
     {
-        private int numberOfLot_;
-        private bool isBusy_;
+        public int NumberOfLot { get; set; }
+        public bool IsBusy { get; set; }
 
         public ParkingLot(int numberOfLot, bool isBusy)
         {
-            numberOfLot_ = numberOfLot;
-            isBusy_ = isBusy;
-        }
-
-        public int Number
-        {
-            get {return numberOfLot_; }
-        }
-        public bool Busy
-        {
-            get { return isBusy_; }
-            set { isBusy_ = value; }
+            NumberOfLot = numberOfLot;
+            IsBusy = isBusy;
         }
     }
 }

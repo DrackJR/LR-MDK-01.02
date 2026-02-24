@@ -12,14 +12,9 @@ namespace Car_Parking
 
         public Parking(int numberOfLots)
         {
-            for (int i = 1; i <= numberOfLots; i++)
+            for (int i = 0; i < numberOfLots; i++)
             {
-                //bool isBusy = true;
-                //if (i % 2 == 0)
-                //{
-                //    isBusy = false;
-                //}
-                parking_.Add(new ParkingLot(i, false));
+                parking_.Add(new ParkingLot(i + 1, false));
             }     
         }
 
@@ -27,7 +22,7 @@ namespace Car_Parking
         {
             if (!CheckParkingLot(userQuery))
             {
-                return parking_[userQuery].IsBusy = true;
+                return parking_[userQuery - 1].IsBusy = true;
             }
             return false;
         }
@@ -35,7 +30,7 @@ namespace Car_Parking
         {
             if (CheckParkingLot(userQuery))
             {
-                parking_[userQuery].IsBusy = false;
+                parking_[userQuery - 1].IsBusy = false;
                 return true;              
             }
             return false;

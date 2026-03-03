@@ -20,7 +20,7 @@ namespace Car_Parking
 
         public bool TakingPlace(int userQuery)
         {
-            if (!CheckParkingLot(userQuery))
+            if (!IsAvaible(userQuery))
             {
                 return parking_[userQuery - 1].IsBusy = true;
             }
@@ -28,7 +28,7 @@ namespace Car_Parking
         }
         public bool FreeingUpSpace(int userQuery)
         {
-            if (CheckParkingLot(userQuery))
+            if (IsAvaible(userQuery))
             {
                 parking_[userQuery - 1].IsBusy = false;
                 return true;              
@@ -36,7 +36,7 @@ namespace Car_Parking
             return false;
         }
 
-        public bool CheckParkingLot(int userQuery)
+        public bool IsAvaible(int userQuery)
         {
             foreach(ParkingLot lot in parking_)
             {

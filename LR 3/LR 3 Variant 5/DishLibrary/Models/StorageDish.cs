@@ -27,34 +27,43 @@ namespace DishLibrary.Models
 
             return allDish;
         }
-        public void BuyButtonClick()
-        {
-            if (orders_.ContainsKey(CategoriesListBox.SelectedItem.ToString()))
+        public List<Dish> ChoiceCategoriesListBox()
+        { 
+            List<Dish> selectedDish = new List<Dish>();
+            List<Dish> allDishes = Load();
+            if()
             {
-                orders_[CategoriesListBox.SelectedItem.ToString()] += Convert.ToInt32(QuantityTextBox.Text);
-                BasketRichTextBox.Clear();
-                foreach (string key in orders_.Keys)
+                foreach (Dish dish in allDishes)
                 {
-                    BasketRichTextBox.AppendText(key + " " + orders_[key] + " шт.\n");
+                    if (dish.Category == "Завтрак")
+                    {
+                        selectedDish.Add(dish);
+                    }
                 }
             }
+
+            else if (number == 1)
+            {
+                foreach (Dish dish in allDishes)
+                {
+                    if (dish.Category == "Обед")
+                    {
+                        selectedDish.Add(dish);
+                    }
+                }
+            }
+
             else
             {
-                orders_.Add(CategoriesListBox.SelectedItem.ToString(), Convert.ToInt32(QuantityTextBox.Text));
-                BasketRichTextBox.Clear();
-                foreach (string key in orders_.Keys)
+                foreach (Dish dish in allDishes)
                 {
-                    BasketRichTextBox.AppendText(key + " " + orders_[key] + " шт.\n");
+                    if (dish.Category == "Ужин")
+                    {
+                        selectedDish.Add(dish);
+                    }
                 }
             }
-        }
-        public void ChoiceMenuComboBox()
-        {
-            Dish dish = MenuComboBox.SelectedItem as Dish;
-            PriceLabel.Text = dish.Price.ToString() + "  руб.";
-            PhotoPictureBox.Load(dish.Photo);
-            DescriptionLabel.Text = dish.Description;
-            QuantityTextBox.Text = "0";
+            return selectedDish;
         }
     }
 }

@@ -10,12 +10,9 @@ namespace LR_3_Variant_5
     {
         private Dictionary<string, int> orders_ = new Dictionary<string, int>();
         private StorageDish dishes_ = new StorageDish();
-        private List<Dish> allDishes_ = new List<Dish>();
         public MainForm()
         {
             InitializeComponent();
-
-            allDishes_ = dishes_.Load();
             CategoriesListBox.Items.Add("Завтрак");
             CategoriesListBox.Items.Add("Обед");
             CategoriesListBox.Items.Add("Ужин");
@@ -26,13 +23,7 @@ namespace LR_3_Variant_5
         private void CategoriesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MenuComboBox.Items.Clear();
-            foreach(Dish dish in allDishes_)
-            {
-                if (dish.Category == CategoriesListBox.SelectedItem.ToString())
-                {
-                    MenuComboBox.Items.Add(dish);
-                }
-            }
+            MenuComboBox.DataSource = dishes_.ChoiceCategoriesListBox();
             MenuComboBox.DisplayMember = "Name";
             MenuComboBox.SelectedIndex = 0;
         }

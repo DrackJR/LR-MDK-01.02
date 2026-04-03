@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIntegrationTest", "TIntegrationTest\TIntegrationTest.csproj", "{3382E21C-0A71-40E5-9B44-764CD2DC193A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLibrary", "TestLibrary\TestLibrary.csproj", "{C4D0D185-9745-4BE3-B340-D62B901E118B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3382E21C-0A71-40E5-9B44-764CD2DC193A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3382E21C-0A71-40E5-9B44-764CD2DC193A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3382E21C-0A71-40E5-9B44-764CD2DC193A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3382E21C-0A71-40E5-9B44-764CD2DC193A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D0D185-9745-4BE3-B340-D62B901E118B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D0D185-9745-4BE3-B340-D62B901E118B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D0D185-9745-4BE3-B340-D62B901E118B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D0D185-9745-4BE3-B340-D62B901E118B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B15E0F1A-41B8-4BC0-A34D-EABF0EFB2320}
+	EndGlobalSection
+EndGlobal

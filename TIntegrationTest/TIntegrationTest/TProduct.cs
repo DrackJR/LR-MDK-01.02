@@ -21,10 +21,14 @@ namespace TIntegrationTest
                 new Product { Name = "Апельсины", Price = 90, Count = 15 }
             };
 
+
             Assert.AreEqual(expectedList.Count, actualList.Count);
-            Assert.AreEqual(expectedList[0].Name, actualList[0].Name);
-            Assert.AreEqual(expectedList[0].Price, actualList[0].Price);
-            Assert.AreEqual(expectedList[0].Count, actualList[0].Count);
+            for (int i = 0; i < expectedList.Count; i++)
+            {
+                Assert.AreEqual(expectedList[i].Name, actualList[i].Name);
+                Assert.AreEqual(expectedList[i].Price, actualList[i].Price);
+                Assert.AreEqual(expectedList[i].Count, actualList[i].Count);
+            }
         }
     }
 }

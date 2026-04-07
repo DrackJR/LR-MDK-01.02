@@ -12,16 +12,19 @@ namespace TIntegrationTest
         public void TestLoadFromFile()
         {
             SaleImporter loader = new SaleImporter();
-            List<Product> actual = loader.LoadProducts();
+            List<Product> actualList = loader.LoadProducts();
 
-            List<Product> expected = new List<Product>
+            List<Product> expectedList = new List<Product>
             {
-                new Product{Name = "Виноград", Price = 130, Count = 10 },
-                new Product{Name = "Сливы", Price = 100, Count = 5 },
-                new Product{Name = "Апельсины", Price = 90, Count = 15 }
+                new Product { Name = "Виноград", Price = 130, Count = 10 },
+                new Product { Name = "Сливы", Price = 100, Count = 5 },
+                new Product { Name = "Апельсины", Price = 90, Count = 15 }
             };
 
-            CollectionAssert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedList.Count, actualList.Count);
+            Assert.AreEqual(expectedList[0].Name, actualList[0].Name);
+            Assert.AreEqual(expectedList[0].Price, actualList[0].Price);
+            Assert.AreEqual(expectedList[0].Count, actualList[0].Count);
         }
     }
 }

@@ -30,5 +30,16 @@ namespace TIntegrationTest
                 Assert.AreEqual(expectedList[i].Count, actualList[i].Count);
             }
         }
+
+        [TestMethod]
+        public void TSellAnalyzer()
+        {
+            SaleImporter loader = new SaleImporter();
+            List<Product> allProducts = loader.LoadProducts();
+
+            SellAnalyzer analyzer = new SellAnalyzer();
+
+            Assert.AreEqual(2, analyzer.CalcAvgSale(allProducts));
+        }
     }
 }
